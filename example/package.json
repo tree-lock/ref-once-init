@@ -1,0 +1,20 @@
+{
+  "name": "example",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@types/mockjs": "^1.0.5",
+    "mockjs": "^1.1.0",
+    "ref-once-init": "link:..",
+    "vue": "^3.2.25",
+    "@vitejs/plugin-vue": "^2.0.0",
+    "typescript": "^4.4.4",
+    "vite": "^2.7.2",
+    "vue-tsc": "^0.30.2"
+  },
+  "devDependencies": {}
+}

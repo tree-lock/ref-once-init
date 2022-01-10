@@ -17,7 +17,7 @@
   "homepage": "https://github.com/darkXmo/ref-once-init",
   "license": "MIT",
   "dependencies": {
-    "once-init": "^0.7.2",
+    "once-init": "^0.8.1",
     "vue-demi": "^0.12.1"
   },
   "peerDependencies": {
