@@ -2,14 +2,17 @@
   "name": "ref-once-init",
   "version": "0.1.0",
   "description": "Init a ref target by promise only once.",
-  "repository": "git@github.com:darkXmo/once-init.git",
+  "repository": "git@github.com:darkXmo/ref-once-init.git",
   "author": "Xmo <18851989097@163.com>",
   "keywords": [
     "front-end",
     "xmon",
     "xmo",
     "init",
-    "promise"
+    "promise",
+    "composition-api",
+    "vue",
+    "ref"
   ],
   "homepage": "https://github.com/darkXmo/ref-once-init",
   "license": "MIT",
@@ -51,6 +54,17 @@
     ],
     "*.{js,ts,css,md}": "prettier --write --ignore-unknown"
   },
+  "module": "dist/ref-once-init.mjs",
+  "main": "dist/ref-once-init.js",
+  "jsnext:main": "dist/ref-once-init.mjs",
+  "umd:main": "dist/ref-once-init.umd.js",
+  "source": "src/index.ts",
+  "typings": "index.d.ts",
+  "exports": {
+    "import": "./dist/ref-once-init.mjs",
+    "require": "./dist/ref-once-init.js",
+    "default": "./dist/ref-once-init.mjs"
+  },
   "files": [
     "dist",
     "index.d.ts"
@@ -58,13 +72,10 @@
   "scripts": {
     "commit": "git add . && git status && git-cz",
     "prepare": "husky install",
-    "build": "npx rimraf dist && npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc --module es2015 --outDir dist -d",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "bundle": "microbundle -f es,cjs,umd",
+    "build": "rimraf dist && npm run bundle",
     "clean": "rm -rf dist pnpm* yarn.* node_modules package-*"
   },
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
