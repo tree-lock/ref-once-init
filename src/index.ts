@@ -58,9 +58,8 @@ export abstract class RefOnceInit<
     observe.value = raw as unknown as T;
   }
   constructor(defaultValue?: T) {
-    const refed = ref<T>();
-    refed.value = defaultValue;
-    super(refed);
+    super(ref<T>());
+    (this.observe as Ref<T>).value = defaultValue;
     this.onLoading((event) => {
       this.loading.value = event;
     });

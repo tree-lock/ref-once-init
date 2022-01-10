@@ -1,13 +1,11 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "target": "esnext",
-    "lib": ["esnext", "dom"],
-    "strict": true,
-    "noEmit": true,
-    "declaration": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "target": "es2016",
+    "outDir": "dist",
+    "rootDir": "./src",
+    "moduleResolution": "node"
   },
-  "include": ["src/*.ts", "test/*.ts"]
+  "exclude": ["node_modules", "**/node_modules/*"]
 }
