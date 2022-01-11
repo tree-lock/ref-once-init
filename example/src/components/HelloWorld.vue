@@ -1,29 +1,23 @@
 <script setup lang="ts">
 import { ref } from "vue";
-
+import request from "@/api/request";
+import oi from "ref-once-init";
 defineProps<{ msg: string }>();
 
 const count = ref(0);
+const req = () =>
+  request.count().then((res) => {
+    count.value = res;
+  });
+const oiReq = oi(req).refresh;
+req();
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
+  <button @click="req">send request</button>
+  <button @click="oiReq">send oiRequest</button>
+  <h3>{{ count }}</h3>
 </template>
 
-<style scoped>
-a {
-  color: #42b983;
-}
-
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
-}
-</style>
+<style scoped></style>
