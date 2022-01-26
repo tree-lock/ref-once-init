@@ -9,6 +9,7 @@ import styleImport, { ElementPlusResolve } from "vite-plugin-style-import";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: process.env.NODE_ENV === "production" ? "/ref-once-init/" : "/",
   plugins: [
     vue(),
     viteSvgIcons({

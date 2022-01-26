@@ -5,7 +5,7 @@
   <a href="https://www.npmjs.com/package/ref-once-init"><img src="https://img.shields.io/npm/v/ref-once-init.svg?sanitize=true" alt="gzip size"></a>
 </p>
 
-<strong style="text-align: center;">🗼 Let Promise Function Executed Only Once.</strong>
+<strong style="text-align: center;">🗼 Let Promise Function Executed Only Once. (Vue Ref)</strong>
 
 只会被初始化一次的 `Promise` 函数。
 
@@ -20,6 +20,7 @@
 
 1. **`OnceInit` 封装的 `Promise Function` ，永远不会在同一时间被执行两次。**
 2. 如果上一个 `Promise Function` 没有执行完成就调用了下一个 `Promise Function` ，那么下一个 `Promise Function` 将共享上一个`Promise Function` 的 `Promise`。
+3. [示例](https://darkxmo.github.io/ref-once-init)
 
 ## Install
 
