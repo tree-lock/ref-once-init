@@ -15,6 +15,7 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use((response) => {
   const consoleString = "%c🛸 [Axios] Received API Response => ";
   console.log(consoleString, "color: #378362; ", response.config.url);
+  console.log(response.data);
   return response;
 });
 

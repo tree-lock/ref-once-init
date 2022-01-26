@@ -4,17 +4,37 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && rimraf ../docs && mkdir -p ../docs && cp -rf dist/* ../docs"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^0.2.6",
     "@types/mockjs": "^1.0.5",
-    "@vitejs/plugin-vue": "^2.0.0",
+    "@types/node": "^17.0.12",
+    "@vitejs/plugin-vue": "^2.1.0",
     "axios": "^0.24.0",
+    "element-plus": "^1.3.0-beta.9",
+    "mitt": "^3.0.0",
     "mockjs": "^1.1.0",
-    "ref-once-init": "link:..",
+    "once-init": "^0.8.1",
+    "ref-once-init": "^0.1.0",
+    "sass": "^1.49.0",
     "typescript": "^4.4.4",
+    "unplugin-auto-import": "^0.5.11",
+    "unplugin-vue-components": "^0.17.14",
     "vite": "^2.7.2",
-    "vue": "^3.2.25",
+    "vite-plugin-style-import": "^1.4.1",
+    "vite-plugin-svg-icons": "^1.1.0",
+    "vue": "3.2.29",
+    "vue-router": "^4",
     "vue-tsc": "^0.30.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss": "^8.4.5"
+    }
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
   }
 }
