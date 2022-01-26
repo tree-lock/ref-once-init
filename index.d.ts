@@ -1,9 +1,9 @@
 import { InitOnceInit } from "once-init";
 import { Ref } from "vue-demi";
-export default function oi<T, P extends Array<any>>(
+export default function oi<T, P extends Array<any> = []>(
   promise: (...param: P) => Promise<T>
 ): RefOnceInit<T, P>;
-export default function oi<T, P extends Array<any>>(
+export default function oi<T, P extends Array<any> = []>(
   promise: (...param: P) => Promise<T>,
   defaultValue: T
 ): InitRefOnceInit<T, P>;
